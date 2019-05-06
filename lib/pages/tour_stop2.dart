@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/audio_playback.dart';
 
 class TourStopDetails {
   final String id;
@@ -64,6 +65,7 @@ class TourStop2 extends StatelessWidget {
             "Stories",
             style: localTheme.textTheme.body1,
           ),
+          AudioPlayButton(),
           Text(
             tour.tourStories[0].name,
             style: localTheme.textTheme.body1,

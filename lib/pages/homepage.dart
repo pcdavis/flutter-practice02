@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'page2.dart';
-import 'tour_stop.dart';
-import '../a_list.dart';
+import '../widgets/audio_playback.dart';
+// import 'page2.dart';
+// import 'tour_stop.dart';
+// import '../a_list.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key key}) : super(key: key);
@@ -12,7 +13,9 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("The bad doggy bar"),
       ),
-      body: TourStopPage(),
+      body: Center(
+        child: AudioPlayButton(),
+      ),
     );
   }
 }
