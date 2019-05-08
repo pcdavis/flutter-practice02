@@ -9,16 +9,17 @@ class AudioPlayButton extends StatefulWidget {
 
 class _AudioPlayButtonState extends State<AudioPlayButton> {
   bool _isPlaying = false;
-  FlutterSound _sound;
+  // FlutterSound flutterSound;
 
-  @override
-  void initState() {
-    super.initState();
-    _sound = new FlutterSound();
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //    flutterSound = new FlutterSound();
+  // }
 
   void _stop() async {
-    String result = await _sound.stopPlayer();
+    FlutterSound flutterSound = new FlutterSound();
+    String result = await flutterSound.stopPlayer();
     print('stop result: $result');
   }
 
@@ -26,10 +27,12 @@ class _AudioPlayButtonState extends State<AudioPlayButton> {
     final url =
         'https://commons.wikimedia.org/wiki/File:A_Tale_of_Distant_Lands.mp3';
 
-    String path = await _sound.startPlayer(url);
-    print('startPlayer: $path');
+    FlutterSound flutterSound = new FlutterSound();
+    String path = await flutterSound.startPlayer(url);
+    print(
+        'startPlayer:-------------------------------------------------------------- $path');
 
-    // _playerSubscription = _sound.onPlayerStateChanged.listen((e) {
+    // _playerSubscription = flutterSound.onPlayerStateChanged.listen((e) {
     //   if (e != null) {
     //     DateTime date =
     //         new DateTime.fromMillisecondsSinceEpoch(e.currentPosition.toInt());
